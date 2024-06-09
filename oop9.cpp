@@ -58,20 +58,23 @@ public:
         else if(marks >= 1.26 && marks <= 1.50){
             cout<<"Passed with great scores!";
         }
-        else if(marks >= 1.26 && marks <= 1.50){
+        else if(marks >= 1.51 && marks <= 1.75){
             cout<<"Passed!";
         }
+        else if(marks >= 1.76 && marks <= 3.00){
+            cout<<"Passed!";
+        }
+        else{
+            cout<<"Failed...";
+        }
     }
-
-
-
 };
 
 int main(){
 
     Student stud1("Keith Esteron", "Batch 2021", 2021105356);
-    stud1.setMarks(1.50);
+    stud1.setMarks(1.00);
     cout << "Grade is: " << fixed << setprecision(2) << stud1.getMarks() << endl;
+    stud1.calculateGrade();
 
-    return 0;
 }
