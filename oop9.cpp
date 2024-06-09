@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
 
@@ -8,14 +9,14 @@ private:
     string stud_name;
     string stud_class;
     int roll_number;
-    int marks;
+    double marks;
 
 public:
-    Student(string s_name, string s_class, int s_rnumber, int s_marks){
+    Student(string s_name, string s_class, int s_rnumber){
         stud_name = s_name;
         stud_class = s_class;
         roll_number = s_rnumber;
-        marks = s_marks;
+        marks = 0;
     }
 
     string getName(){
@@ -30,7 +31,7 @@ public:
         return roll_number;
     }
 
-    int getMarks(){
+    double getMarks(){
         return marks;
     }
 
@@ -38,15 +39,15 @@ public:
         stud_name = s_name;
     }
 
-    void getName(string s_class){
+    void setClass(string s_class){
         stud_class = s_class;
     }
 
-    void getRollNumber(int s_rnumber){
+    void setRollNumber(int s_rnumber){
         roll_number = s_rnumber;
     }
 
-    void getMarks(int s_marks){
+    void setMarks(double s_marks){
         marks = s_marks;
     }
 
@@ -55,10 +56,10 @@ public:
             cout<<"Passed with flying colors!";
         }
         else if(marks >= 1.26 && marks <= 1.50){
-            cout<<"Passed";
+            cout<<"Passed with great scores!";
         }
         else if(marks >= 1.26 && marks <= 1.50){
-            cout<<"Passed";
+            cout<<"Passed!";
         }
     }
 
@@ -67,6 +68,10 @@ public:
 };
 
 int main(){
+
+    Student stud1("Keith Esteron", "Batch 2021", 2021105356);
+    stud1.setMarks(1.50);
+    cout << "Grade is: " << fixed << setprecision(2) << stud1.getMarks() << endl;
 
     return 0;
 }
